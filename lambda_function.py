@@ -26,7 +26,8 @@ import json
 import boto3
 # from io import BytesIO
 
-import img2table
+# import img2table
+from img2table.document import Image
 
 
 def lambda_handler(event, context):
@@ -37,6 +38,10 @@ def lambda_handler(event, context):
 
     img = Image(image_bytes)
     tables = img.extract_tables(borderless_tables=True)
+    for table in tables:
+        for row in table.content.values():
+            for cell in row:
+                print('cell',cell)
     print(tables)
 
     # TODO implement
