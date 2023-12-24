@@ -22,12 +22,12 @@ import json
 # import polars as pl
 # import fitz
 
-# from wow import Image
+from wow import Image
 import boto3
 # from io import BytesIO
 
 # import img2table
-from img2table.document import Image
+# from img2table.document import Image
 
 
 def lambda_handler(event, context):
